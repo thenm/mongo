@@ -11,8 +11,8 @@ MongoClient.connect(url, (err, db) => {
   ];
   ddb.collection("Customer").insertMany(myobj, (err, res) => {
     if(err) return console.log('Unable to insert record', err);
-    console.log(`Insert` );
-    console.log(res);
+    console.log(`Insert ${res.insertedCount} records` );
+    console.log(res.ops);
     db.close();
   });
 });
