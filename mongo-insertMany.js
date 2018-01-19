@@ -1,8 +1,8 @@
 var {MongoClient} = require('mongodb');
-var url = "mongodb://localhost:27017/"
+var url = "mongodb://localhost:27017/";
 
 MongoClient.connect(url, (err, db) => {
-  // if(err) return console.log('Unable to connect with DB');
+  if(err) return console.log('Unable to connect with DB');
   var ddb = db.db("mydb");
   var myobj = [
     {name: 'Virat Kohli', address: 'Mumbai' },
